@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Karamveer Singh Rathore | Portfolio</title>
+
+<style>
+:root {
+  --primary: #0a84ff;
+  --light-gray: #f5f6f7;
+  --dark-bg: #1f1f1f;
+  --text-dark: #1e1e1e;
+  --text-light: #f9f9f9;
+  --card-bg-light: #ffffff;
+  --radius: 18px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  --transition: 0.3s ease;
+}
+
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--light-gray);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 60px;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color var(--transition);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width var(--transition);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: var(--primary);
+}
+
+/* ===== Sections ===== */
+section {
+  min-height: 100vh;
+  padding: 120px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== HERO (Light) ===== */
+#hero {
+  background: var(--light-gray);
+  color: var(--text-dark);
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+#hero .hero-content {
+  max-width: 550px;
+}
+
+#hero h2 {
+  font-size: 2.6rem;
+  background: linear-gradient(90deg, #007bff, #00a8ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#hero p {
+  margin-top: 15px;
+  color: #555;
+  line-height: 1.8;
+}
+
+#hero img {
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  margin-top: 25px;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #0073e6;
+  transform: translateY(-2px);
+}
+
+/* ===== ABOUT (Dark) ===== */
+#about {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 25px;
+}
+
+#about p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+/* ===== SKILLS ===== */
+#skills {
+  background: #fafafa;
+  color: var(--text-dark);
+  text-align: center;
+  padding: 120px 10%;
+}
+
+#skills h2 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+#skills .skills-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  color: var(--text-dark);
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-4px);
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(10, 132, 255, 0.3);
+}
+
+/* ===== PROJECTS (Clean Text Version) ===== */
+#projects {
+  background: var(--light-gray);
+  color: var(--text-dark);
+  padding: 120px 10%;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 50px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 35px 40px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-card h3 {
+  color: var(--primary);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.project-card .tech-stack {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* ===== CONTACT ===== */
+#contact {
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
+
+#contact h2 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.contact-info h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.contact-info a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.contact-info .socials a {
+  margin-right: 15px;
+  transition: transform var(--transition);
+}
+
+.contact-info .socials a:hover {
+  transform: scale(1.15);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.footer-text {
+  text-align: center;
+  padding-top: 50px;
+  color: #999;
+}
+
+/* ===== Fade-Up Animation ===== */
+.fade-up-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 14px 30px;
+  }
+
+  #hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  #hero img {
+    width: 220px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <h1>Karamveer Singh Rathore</h1>
+  <nav>
+    <a href="#hero" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="hero">
+  <div class="fade-up-content" style="display: contents;">
+    <div class="hero-content">
+      <h2>Hi, I'm Karamveer 👋</h2>
+      <p>
+        <strong>MCA at Lovely Professional University</strong> <br> 
+        || Cloud Computing Practitioner || System Design Practitioner <br>
+        <strong>Creating and maintaining Structured Reusable Components</strong>
+      </p>
+      <button class="btn" onclick="scrollToProjects()">View My Work</button>
+    </div>
+    <img src="https://via.placeholder.com/300" alt="Profile photo">
+  </div>
+</section>
+
+<section id="about">
+  <div class="fade-up-content">
+    <h2>About Me</h2>
+    <p>
+      I'm currently pursuing my <strong>Master of Computer Applications (MCA)</strong> at 
+      <strong>Lovely Professional University</strong>, specializing in <strong>Software Design and Cloud Computing</strong>.
+      <br><br>
+      As a <strong>Cloud Computing Practitioner</strong> and <strong>System Design Enthusiast</strong>, 
+      I focus on building robust, scalable, and reusable digital solutions. 
+      My approach to development emphasizes <strong>structured, maintainable, and modular components</strong> that 
+      enhance both performance and code reusability.
+      <br><br>
+      I’m passionate about turning complex challenges into clean, efficient systems — 
+      bridging innovation and practicality through thoughtful engineering and design.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="fade-up-content">
+    <h2>Skills</h2>
+    <p class="skills-subtitle">
+      Tools and technologies I use to design, develop, and deploy efficient solutions.
+    </p>
+
+    <div class="skills-wrapper">
+      <span class="skill-item">Java</span>
+      <span class="skill-item">Python</span>
+      <span class="skill-item">HTML</span>
+      <span class="skill-item">CSS</span>
+      <span class="skill-item">JavaScript</span>
+      <span class="skill-item">Firebase</span>
+      <span class="skill-item">Android Studio</span>
+      <span class="skill-item">SQL</span>
+      <span class="skill-item">Git / GitHub</span>
+      <span class="skill-item">React</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="fade-up-content">
+    <h2>My Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>🛒 Amazon Clone Application</h3>
+        <p>
+          A fully functional Android e-commerce app built using <strong>Java</strong> and 
+          <strong>Android Studio</strong> with secure login and real-time product data 
+          managed through a <strong>NoSQL</strong> database.
+        </p>
+        <p class="tech-stack"><strong>Tech Stack:</strong> Java, Android Studio, NoSQL</p>
+      </div>
+
+      <div class="project-card">
+        <h3>⚙️ Wishlist Product Comparison</h3>
+        <p>
+          A web-based application that compares two <strong>Flipkart products</strong> 
+          and shows their <strong>pros and cons</strong> using live data. 
+          Integrated <strong>Firebase Authentication</strong> for secure login.
+        </p>
+        <p class="tech-stack"><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase</p>
+      </div>
+
+      <div class="project-card">
+        <h3>🐍 Data Scraper Automation</h3>
+        <p>
+          A <strong>Python automation tool</strong> that extracts and organizes contact details 
+          into structured datasets using <strong>Pandas</strong> and <strong>Beautiful Soup</strong>.
+        </p>
+        <p class="tech-stack"><strong>Tech Stack:</strong> Python, Pandas, BeautifulSoup</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="fade-up-content">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Let's Connect 🤝</h3>
+        <p>I'm open to collaborations, freelance projects, or full-time roles.</p>
+        <p><strong>Email:</strong> <a href="mailto:karmveersingh.aug23@gmail.com">karmveersingh.aug23@gmail.com</a></p>
+        <p><strong>Phone:</strong> +91 7296817854</p>
+        <p><strong>Location:</strong> Jodhpur, Rajasthan 🇮🇳</p>
+        <div class="socials">
+          <a href="#">🐱 GitHub</a>
+          <a href="https://www.linkedin.com/in/karamveer-singh-rathore-7b3416179/">💼 LinkedIn</a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message ✉️</button>
+      </form>
+    </div>
+    <p class="footer-text">© 2025 Karamveer Singh Rathore. All rights reserved.</p>
+  </div>
+</section>
+
+<script>
+function sendMessage(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  alert(`Thank you, ${name}! Your message has been received.`);
+  e.target.reset();
+}
+
+function scrollToProjects() {
+  document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Fade-up animation
+const fadeEls = document.querySelectorAll('.fade-up-content');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.2 });
+fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
